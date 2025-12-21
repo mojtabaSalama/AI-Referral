@@ -1,6 +1,8 @@
 import 'package:ai_referral/app_state/patients_provider.dart';
+import 'package:ai_referral/screens/dashboard.dart';
 import 'package:ai_referral/screens/patient_form_screen.dart';
-import 'package:ai_referral/screens/predictionScreen.dart';
+import 'package:ai_referral/screens/patients_list.dart';
+import 'package:ai_referral/screens/prediction_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Cairo',
           appBarTheme: AppBarTheme(
             elevation: 0,
+            backgroundColor: Color(0xFF2563EB),
             
             centerTitle: true,
             
@@ -53,7 +56,10 @@ class MyApp extends StatelessWidget {
         ),
         home: PatientFormScreen(),
          routes: {
-          '/prediction': (context) => PredictionScreen(),
+         '/prediction': (context) => PredictionScreen(), 
+         '/form': (context) => PatientFormScreen(),
+        '/dashboard': (context) => PatientDashboard(),
+         '/list': (context) => PatientList(),
          },
       ),
     );

@@ -12,7 +12,26 @@ class Api {
         
       };
 
-      final url = Uri.parse("https://aireferral-uv4n.onrender.com/records");
+      final url = Uri.parse("https://aireferral-ynxf.onrender.com/summary");
+
+      http.Response response = await http.get(url, headers: configHeaders);
+    
+
+      return response;
+    } on SocketException {
+      return http.Response("No Internet connection", 500);
+    } catch (e) {
+      return http.Response("Internal error , try again later ", 500);
+    }
+  }
+   static Future getByID(id) async {
+    try {
+      Map<String, String> configHeaders = {
+        "Content-Type": "application/json",
+        
+      };
+
+      final url = Uri.parse("https://aireferral-ynxf.onrender.com/record/$id");
 
       http.Response response = await http.get(url, headers: configHeaders);
 
@@ -20,6 +39,7 @@ class Api {
     } on SocketException {
       return http.Response("No Internet connection", 500);
     } catch (e) {
+     
       return http.Response("Internal error , try again later ", 500);
     }
   }
@@ -30,7 +50,8 @@ class Api {
         
       };
 
-      final url = Uri.parse("https://aireferral-uv4n.onrender.com/insert");
+      final url = Uri.parse("https://aireferral-ynxf.onrender.com/insert"
+      );
 
       http.Response response = await http.post(url, headers: configHeaders,body: jsonEncode(data));
 
