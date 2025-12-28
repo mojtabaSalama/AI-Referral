@@ -4,16 +4,16 @@ class StatCard extends StatelessWidget {
   final BuildContext context;
   final String label;
    final String value; 
- 
+  final Color backgroundcolor;
   final IconData icon;
    final Color color;
-  const StatCard({super.key,required this.context,required this.label, required this.value, required this.icon, required this.color});
+  const StatCard({super.key,required this.context,required this.label, required this.backgroundcolor, required this.value, required this.icon, required this.color});
 
   @override
   Widget build(BuildContext context) {
      return Container(
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(color: Theme.of(context).cardColor, borderRadius: BorderRadius.circular(16), border: Border.all(color: Colors.grey.shade200)),
+      decoration: BoxDecoration(color: backgroundcolor, borderRadius: BorderRadius.circular(16), border: Border.all(color: Colors.grey.shade200)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

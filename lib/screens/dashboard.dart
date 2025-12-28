@@ -29,7 +29,7 @@ void initState() {
   //   return Loading(text: "loading");
   // }
     return Scaffold(
-      appBar: AppBar(title: const Text('Patient Dashboard'), elevation: 0, centerTitle: false),
+      appBar: AppBar(title: const Text(' Dashboard'), elevation: 0, centerTitle: false),
       body: Column( crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
@@ -62,9 +62,9 @@ style: TextStyle(fontWeight: FontWeight.bold ,fontSize: 24),        ),
                         const SizedBox(height: 12),
                         Row(
                           children: [
-                            Expanded(child: _statCard(context, label: 'Urgent Cases', value: summary.totalUrgent.toString(), icon: Icons.warning, color: Colors.red)),
+                            Expanded(child: _statCard(context, label: 'Urgent ', value: summary.totalUrgent.toString(), icon: Icons.warning, color: Colors.red)),
                             const SizedBox(width: 12),
-                            Expanded(child: _statCard(context, label: 'Normal Status', value: summary.totalNonUrgent.toString(), icon: Icons.check_circle, color: Colors.green)),
+                            Expanded(child: _statCard(context, label: 'Non Urgent ', value: summary.totalNonUrgent.toString(), icon: Icons.check_circle, color: Colors.green)),
                           ],
                         ),
                         SizedBox(height: 15,),

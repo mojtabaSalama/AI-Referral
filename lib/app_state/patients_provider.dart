@@ -60,6 +60,8 @@ Future<bool> getByID(id) async {
 }
 
 Future<dynamic> predict( data) async {
+  try{
+
  setLoading(true);
   final response = await Api.predict(data);
 
@@ -73,5 +75,10 @@ Future<dynamic> predict( data) async {
    setLoading(false); 
   return json.decode(response.body);
 }
+catch (e) {
+    return false;
+  }
+}
+
 
 }

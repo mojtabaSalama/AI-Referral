@@ -38,7 +38,10 @@ void initState() {
       return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
-
+    leading: BackButton(
+    color: Colors.white,          // colour
+    onPressed: () => Navigator.of(context).pop(),
+  ),
         title: const Text('Result'),
     
 
@@ -47,8 +50,8 @@ void initState() {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-          StatCard(context: context, label: "Triage levek", value: record.triageLevel==1?"Urgent":"Non Urgent",
-          icon: record.triageLevel==1?Icons.warning:Icons.check, color: record.triageLevel==1?Colors.red:Colors.green),
+          StatCard(context: context, label: "Triage level", value: record.triageLevel==1?"Urgent":"Non Urgent",
+          icon: record.triageLevel==1?Icons.warning:Icons.check, color: record.triageLevel==1?Colors.red:Colors.green, backgroundcolor: record.triageLevel==1?Color(0xFFF87171): Colors.white),
             const SizedBox(height: 24),
             _buildPatientInfo(record),
             const SizedBox(height: 24),
@@ -357,7 +360,7 @@ void initState() {
                   ),
                   SizedBox(width: 4),
                   Text(
-                    '/ 6',
+                    '/5',
                     style: TextStyle(
                       fontSize: 12,
                       color: Color(0xFF6B7280),
@@ -381,7 +384,9 @@ void initState() {
                 widthFactor: 0.2,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: const Color(0xFF10B981),
+                    color:
+                  
+                     const Color(0xFF10B981),
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
@@ -397,47 +402,11 @@ void initState() {
   Widget _buildFloatingButton() {
     // 1.  Add this line to Scaffold
 return
-Column( mainAxisAlignment: MainAxisAlignment.end,
-  children: [
-    FloatingButton(bgColor:  const Color(0xFF2563EB), function: () {Navigator.pushReplacementNamed(context, '/form');}, 
-    icon: Icons.medication, text: 'Make New Prediction', textColor: Colors.white),
-    // SizedBox(height: 2,),
-    
-FloatingButton(bgColor:   Colors.blueGrey, function: () {Navigator.pushReplacementNamed(context, '/dashboard');}, 
-icon: Icons.history, text: 'Previous Assessments', textColor: Colors.black)
-  ],
-);
-  // return Container(
-  //   padding: EdgeInsets.symmetric(vertical: 10 ,horizontal: 15),
-  //   width: double.maxFinite,
-  //   child: ElevatedButton(
-  //     onPressed: () {Navigator.pushReplacementNamed(context, '/form');},
-  //     style: ElevatedButton.styleFrom(
-        
-  //       backgroundColor: const Color(0xFF2563EB),
-  //       foregroundColor: Colors.white,
-  //       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-  //       shape: RoundedRectangleBorder(
-  //         borderRadius: BorderRadius.circular(16),
-  //       ),
-  //       elevation: 8,
-  //     ),
-  //     child: const Row(
-  //       mainAxisSize: MainAxisSize.min,
-        
-  //       children: [
-         
-          
-  //         Text(
-  //           'Make New Prediction',
-  //           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-  //         ),
-  //         SizedBox(width: 8),
-  //          Icon(Icons.medication, size: 20),
-  //       ],
-  //     ),
-  //   ),
-  // );
+FloatingButton(bgColor:  const Color(0xFF2563EB), function: () {Navigator.pushNamedAndRemoveUntil
+(context, '/form',(Route<dynamic> route) => false,
+);}, 
+icon: Icons.medication, text: 'Make New Prediction', textColor: Colors.white);
+
   
 }
 }

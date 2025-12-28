@@ -138,7 +138,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
 
         
 Text(
-   'Normal'
+   'Non Urgent'
       
 ),
         const SizedBox(height: 8),
@@ -492,41 +492,12 @@ Column( mainAxisAlignment: MainAxisAlignment.end,
     icon: Icons.medication, text: 'Make New Prediction', textColor: Colors.white),
     // SizedBox(height: 2,),
     
-FloatingButton(bgColor:   Colors.blueGrey, function: () {Navigator.pushReplacementNamed(context, '/dashboard');}, 
+FloatingButton(bgColor: Colors.grey.shade600,
+function: () {Navigator.pushReplacementNamed(context, '/dashboard');}, 
 icon: Icons.history, text: 'Previous Assessments', textColor: Colors.black)
   ],
 );
-  // return Container(
-  //   padding: EdgeInsets.symmetric(vertical: 10 ,horizontal: 15),
-  //   width: double.maxFinite,
-  //   child: ElevatedButton(
-  //     onPressed: () {Navigator.pushReplacementNamed(context, '/form');},
-  //     style: ElevatedButton.styleFrom(
-        
-  //       backgroundColor: const Color(0xFF2563EB),
-  //       foregroundColor: Colors.white,
-  //       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-  //       shape: RoundedRectangleBorder(
-  //         borderRadius: BorderRadius.circular(16),
-  //       ),
-  //       elevation: 8,
-  //     ),
-  //     child: const Row(
-  //       mainAxisSize: MainAxisSize.min,
-        
-  //       children: [
-         
-          
-  //         Text(
-  //           'Make New Prediction',
-  //           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-  //         ),
-  //         SizedBox(width: 8),
-  //          Icon(Icons.medication, size: 20),
-  //       ],
-  //     ),
-  //   ),
-  // );
+  
   
 }
 }
